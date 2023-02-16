@@ -101,7 +101,6 @@
 export default {
   data: () => ({
     page: 1,
-    pageCount: 10,
     itemsPerPage: 8,
     isFetched: false,
     isFetching: false,
@@ -134,6 +133,9 @@ export default {
     formTitle() {
       return this.editedIndex === -1 ? 'New user' : 'Edit user'
     },
+    pageCount(){
+      return this.$vuetify.breakpoint.xs ? 5 : 10
+    }
   },
 
   watch: {
