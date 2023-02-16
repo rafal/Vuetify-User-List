@@ -21,7 +21,13 @@
                 <v-spacer></v-spacer>
                 <v-dialog v-model="dialog" max-width="500px">
                   <template v-slot:activator="{ on, attrs }">
-                    <v-btn color="primary" dark class="mb-2 text-capitalize rounded-pill px-4" v-bind="attrs" v-on="on">
+                    <v-btn v-if="$vuetify.breakpoint.xs" class="ml-6" color="primary" dark fab v-bind="attrs" v-on="on">
+                      <div class="d-flex justify-space-between">
+                        <v-icon small class="d-inline-flex mr-1">mdi-plus</v-icon>
+                      </div>
+                    </v-btn>
+                    <v-btn v-else color="primary" dark class="text-capitalize rounded-pill px-4 ml-6 ml-sm-0" v-bind="attrs"
+                      v-on="on">
                       <div class="d-flex justify-space-between">
                         <v-icon small class="d-inline-flex mr-1">mdi-plus</v-icon>
                         <span>Add user</span>
@@ -40,7 +46,7 @@
                             <v-text-field v-model="editedItem.name" label="Full name"></v-text-field>
                           </v-col>
                           <v-col cols="12" sm="6" md="4">
-                            <v-text-field v-model="editedItem.img" label="Avatar"></v-text-field>
+                            <v-text-field v-model="editedItem.img" label="Avatar link"></v-text-field>
                           </v-col>
                         </v-row>
                       </v-container>
@@ -126,7 +132,7 @@ export default {
 
   computed: {
     formTitle() {
-      return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+      return this.editedIndex === -1 ? 'New user' : 'Edit user'
     },
   },
 
