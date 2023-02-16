@@ -1,4 +1,4 @@
-# my-app
+# Vuetify user list
 
 ## Project setup
 ```
