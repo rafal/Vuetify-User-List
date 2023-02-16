@@ -1,0 +1,20 @@
+tbody tr:nth-of-type(odd) {
+    background-color: #F6F8FA;
+}
+
+td,
+th {
+    border-bottom: transparent !important;
+}
+
+.v-data-footer {
+    border-top: 0 !important;
+}
+
+.v-data-table {
+    padding: 32px 16px;
+}
+
+.v-toolbar__content {
+    padding: 0 !important;
+}
